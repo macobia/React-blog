@@ -4,9 +4,10 @@ import { auth, db } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -30,10 +31,10 @@ const Register = () => {
         name: name,
         createdAt: new Date().toISOString(),
       });
-      alert("Registration successful");
-    //   navigate("/");
+      toast.success("Registration successful");
+      navigate("/login");
     } catch (error) {
-      alert("Failed to register user, chech provided details and try again");
+      toast.error("Failed to register user, chech provided details and try again");
       console.log(error.message);
     }
   };
@@ -44,7 +45,7 @@ const Register = () => {
         <label htmlFor="name">Name</label>
         <input
           type="text"
-          {...register("name", { required: "Name is required" })}
+          {...register("name", { required: "Name is required"})}
           className="form-input"
           id="name"
           placeholder="enter name"
