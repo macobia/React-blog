@@ -1,5 +1,12 @@
 {
   "blogs": [
- 
+    {
+      "title": "blog again",
+      "category": "Entertainment",
+      "content": "This is a business blog",
+      "image": "http://res.cloudinary.com/dn66uj2i1/image/upload/v1734615287/jv0ewi3hohk1tpqb7puk.jpg",
+      "creator": "obicj97@gmail.com",
+      "id": "4cfb"
+    }
   ]
 }

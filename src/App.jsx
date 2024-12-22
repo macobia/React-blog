@@ -13,6 +13,10 @@ import "react-toastify/dist/ReactToastify.css";
 import ProtectedRoute from "./ProtectedRoute";
 import BlogList from "./components/blog/bloglist/BlogList";
 import CreateBlog from "./components/blog/createblog/CreateBlog";
+import EditBlog from "./components/blog/editblog/EditBlog";
+import BlogDetailPage from "./components/BlogDetailPage";
+import BlogDetails from "./components/blog/BlogDetails";
+
 
 function App() {
   return (
@@ -22,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="blog-list" element={<Blog />} />
+          <Route path="blog-detail/:blogId" element={<BlogDetailPage />} />
           <Route
             path="/dashboard"
             element={
@@ -45,7 +50,23 @@ function App() {
                 <CreateBlog />
               </ProtectedRoute>
             }
+          />  <Route
+          path="/edit-blog/:blogId"
+          element={
+            <ProtectedRoute restrictedTo="loggedIn">
+              <EditBlog />
+            </ProtectedRoute>
+          }
+        />
+             <Route
+            path="/blog/:blogId"
+            element={
+              <ProtectedRoute restrictedTo="loggedIn">
+                <BlogDetails />
+              </ProtectedRoute>
+            }
           />
+
           <Route path="/login" element={
              <ProtectedRoute restrictedTo="loggedOut">
               <Login/>

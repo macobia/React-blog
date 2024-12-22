@@ -96,6 +96,9 @@ const CreateBlog = () => {
                 className="form-input"
                 placeholder="title"
                 name="title"
+                value={form.title}
+                onChange={handleChange}
+                required
               />
               <label className="form-label">Category</label>
               <select
