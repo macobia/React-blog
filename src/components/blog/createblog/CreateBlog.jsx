@@ -37,10 +37,10 @@ const CreateBlog = () => {
       const formData = new FormData();
       formData.append("file", form.image);
       formData.append("upload_preset", "blog_images_upload"); // Replace with your preset
-      formData.append("cloud_name", "dn66uj2i1"); // Replace with your Cloudinary cloud name
+      formData.append("cloud_name", "dxrykhupk"); // Replace with your Cloudinary cloud name
 
       const cloudinaryResponse = await axios.post(
-        "https://api.cloudinary.com/v1_1/dn66uj2i1/image/upload", // Replace with your Cloudinary API URL
+        "https://api.cloudinary.com/v1_1/dxrykhupk/image/upload", // Replace with your Cloudinary API URL
         formData
       );
 
